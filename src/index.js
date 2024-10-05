@@ -58,13 +58,7 @@ let camera = createCamera(45, 1, 1000, { x: 0, y: 0, z: 30 })
 
 // get image links from query params
 const urlParams = new URLSearchParams(window.location.search)
-const albedoUrl = urlParams.get('texture')
-
-if (!albedoUrl) {
-  alert("No texture image provided")
-  throw new Error("No texture image provided")
-}
-
+let albedoUrl = urlParams.get('texture')
 let cloudUrl = urlParams.get('clouds')
 let backgroundUrl = urlParams.get('background')
 
@@ -90,6 +84,10 @@ let app = {
     await updateLoadingProgressBar(0.1)
 
     // loads earth's color map, the basis of how our earth looks like
+    if (!albedoUrl) {
+      albedoUrl = Albedo
+      cloudUrl = Clouds
+    }
     const albedoMap = await loadTexture(albedoUrl)
     albedoMap.colorSpace = THREE.SRGBColorSpace
     await updateLoadingProgressBar(0.2)
@@ -99,7 +97,7 @@ let app = {
     
     let cloudsMap = null
     if (cloudUrl) {
-      cloudsMap = await loadTexture(Clouds)
+      cloudsMap = await loadTexture(cloudUrl)
     }
     await updateLoadingProgressBar(0.4)
 
