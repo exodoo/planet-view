@@ -111,7 +111,7 @@ let app = {
       backgroundUrl = GaiaSky
     }
 
-    const envMap = await loadTexture(GaiaSky)
+    const envMap = await loadTexture(backgroundUrl)
     envMap.mapping = THREE.EquirectangularReflectionMapping
     await updateLoadingProgressBar(0.7)
     
