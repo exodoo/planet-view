@@ -54,7 +54,7 @@ let renderer = createRenderer({ antialias: true }, (_renderer) => {
 
 // Create the camera
 // Pass in fov, near, far and camera position respectively
-let camera = createCamera(60, 1, 1000, { x: 0, y: 0, z: 55 })
+let camera = createCamera(60, 1, 1000, { x: 0, y: 0, z: 45 })
 
 // get image links from query params
 const urlParams = new URLSearchParams(window.location.search)
