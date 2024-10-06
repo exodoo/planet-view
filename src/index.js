@@ -11,12 +11,12 @@ import { createCamera, createRenderer, runApp, updateLoadingProgressBar } from "
 import { loadTexture } from "./common-utils"
 import Albedo from "./assets/Albedo.jpg"
 import Bump from "./assets/Bump.jpg"
-import Clouds from "./assets/Clouds.png"
+import Clouds from "./assets/Clouds_2048.png"
 import Ocean from "./assets/Ocean.png"
 import NightLights from "./assets/night_lights_modified.png"
 import vertexShader from "./shaders/vertex.glsl"
 import fragmentShader from "./shaders/fragment.glsl"
-import GaiaSky from "./assets/Gaia_EDR3_darkened.png"
+import GaiaSky from "./assets/Gaia_EDR3_darkened.jpg"
 
 global.THREE = THREE
 // previously this feature is .legacyMode = false, see https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/
@@ -77,7 +77,7 @@ let app = {
 
     // adding a virtual sun using directional light
     this.dirLight = new THREE.DirectionalLight(0xffffff, params.sunIntensity)
-    this.dirLight.position.set(-50, 0, 30)
+    this.dirLight.position.set(0, 0, 30)
     scene.add(this.dirLight)
 
     // updates the progress bar to 10% on the loading UI
