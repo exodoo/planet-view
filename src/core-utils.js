@@ -194,6 +194,6 @@ export const updateLoadingProgressBar = async (frac, delay=200) => {
         const progress = document.getElementById("progress")
         // 200px is the width of the progress bar defined in index.html
         progress.style.width = `${frac * 200}px`
-        setTimeout(resolve, delay)
+        resolve();
     })
 }
