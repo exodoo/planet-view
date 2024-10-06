@@ -16,7 +16,7 @@ import Ocean from "./assets/Ocean.png"
 import NightLights from "./assets/night_lights_modified.png"
 import vertexShader from "./shaders/vertex.glsl"
 import fragmentShader from "./shaders/fragment.glsl"
-import GaiaSky from "./assets/Gaia_EDR3_darkened.jpg"
+import GaiaSky from "./assets/Gaia_EDR3_darkened_3072.jpg"
 
 global.THREE = THREE
 // previously this feature is .legacyMode = false, see https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/
